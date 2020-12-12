@@ -5733,20 +5733,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\sergi\\.nuget\\packages\\": {}
+    "C:\\Users\\Tiago\\.nuget\\packages\\": {},
+    "D:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sergi\\Desktop\\REPOS\\SafetyTourism\\SafetyTourism_Group4\\SafetyTourism_Group4\\SafetyTourism_Group4.csproj",
+      "projectUniqueName": "C:\\Users\\Tiago\\Documents\\Programming\\Upskill\\Aulas\\SafetyTourismGroup4\\SafetyTourism_Group4\\SafetyTourism_Group4\\SafetyTourism_Group4.csproj",
       "projectName": "SafetyTourism_Group4",
-      "projectPath": "C:\\Users\\sergi\\Desktop\\REPOS\\SafetyTourism\\SafetyTourism_Group4\\SafetyTourism_Group4\\SafetyTourism_Group4.csproj",
-      "packagesPath": "C:\\Users\\sergi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sergi\\Desktop\\REPOS\\SafetyTourism\\SafetyTourism_Group4\\SafetyTourism_Group4\\obj\\",
+      "projectPath": "C:\\Users\\Tiago\\Documents\\Programming\\Upskill\\Aulas\\SafetyTourismGroup4\\SafetyTourism_Group4\\SafetyTourism_Group4\\SafetyTourism_Group4.csproj",
+      "packagesPath": "C:\\Users\\Tiago\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Tiago\\Documents\\Programming\\Upskill\\Aulas\\SafetyTourismGroup4\\SafetyTourism_Group4\\SafetyTourism_Group4\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "D:\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\sergi\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Tiago\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -5802,7 +5807,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

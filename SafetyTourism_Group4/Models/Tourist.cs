@@ -12,14 +12,6 @@ namespace SafetyTourism_Group4.Models
         private string nationality;
         private DateTime birthDate;
 
-        public Tourist(string emailID, string name, string nationality, DateTime birthDate)
-        {
-            this.emailID = emailID;
-            this.name = name;
-            this.nationality = nationality;
-            this.birthDate = birthDate;
-        }
-
         public string EmailID { get => emailID; set => emailID = value; }
         public string Name { get => name; set => name = value; }
         public string Nationality { get => nationality; set => nationality = value; }

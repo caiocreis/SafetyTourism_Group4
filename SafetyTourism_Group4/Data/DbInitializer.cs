@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace SafetyTourism_Group4.Data {
     public static class DbInitializer {
-        public static void Initialize(SafetyTourismContext context) {
+        public static void Initialize(PlatformContext context) {
             context.Database.EnsureCreated();
 
             // Look for any students.
@@ -24,7 +24,7 @@ namespace SafetyTourism_Group4.Data {
 
             var destinations = new Destination[]
             {
-            new Destination{DestinationID=1050,CountryName="Australia",CityName="Sydney",ReportList= new List<Report> },
+            new Destination{DestinationID=1050,CountryName="Australia",CityName="Sydney"},
             new Destination{DestinationID=4022,CountryName="Spain",CityName="Madrid"},
             new Destination{DestinationID=4041,CountryName="Portugal",CityName="lisbon"},
             new Destination{DestinationID=1045,CountryName="India",CityName="New Dehli"},

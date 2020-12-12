@@ -13,15 +13,6 @@ namespace SafetyTourism_Group4.Models
         private int infectedNum;
         private string omsAdvice;
 
-        public Report(int reportID, string creationDate, string infectionName, int infectedNum, string omsAdvice)
-        {
-            this.reportID = reportID;
-            this.creationDate = creationDate;
-            this.infectionName = infectionName;
-            this.infectedNum = infectedNum;
-            this.omsAdvice = omsAdvice;            
-        }
-
         public int ReportID { get => reportID; set => reportID = value; }
         public string CreationDate { get => creationDate; set => creationDate = value; }
         public string InfectionName { get => infectionName; set => infectionName = value; }

@@ -12,14 +12,6 @@ namespace SafetyTourism_Group4.Models
         private string cityName;
         private List<Report> reportList;
 
-        public Destination(int destinationID, string countryName, string cityName, List<Report> reportList)
-        {
-            this.destinationID = destinationID;
-            this.countryName = countryName;
-            this.cityName = cityName;
-            this.reportList = reportList;
-        }
-
         public int DestinationID { get => destinationID; set => destinationID = value; }
         public string CountryName { get => countryName; set => countryName = value; }
         public string CityName { get => cityName; set => cityName = value; }
