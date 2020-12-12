@@ -13,12 +13,14 @@ namespace SafetyTourism_Group4.Data {
         public DbSet<Tourist> Tourists { get; set; }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Destination> Destinations { get; set; }
-        
+        public DbSet<Report> Reports { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder) {
             modelBuilder.Entity<Tourist>().ToTable("Tourist");
             modelBuilder.Entity<Employee>().ToTable("Employee");
             modelBuilder.Entity<Destination>().ToTable("Destination");
+            modelBuilder.Entity<Destination>().ToTable("Report");
         }
     }
 }

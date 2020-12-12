@@ -14,6 +14,8 @@ namespace SafetyTourism_Group4.Models
         private string omsAdvice;
 
         public int ReportID { get => reportID; set => reportID = value; }
+
+        public int DestinationID { get => reportID; set => reportID = value; }
         public string CreationDate { get => creationDate; set => creationDate = value; }
         public string InfectionName { get => infectionName; set => infectionName = value; }
         public int InfectedNum { get => infectedNum; set => infectedNum = value; }

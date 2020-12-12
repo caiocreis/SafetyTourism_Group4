@@ -39,23 +39,14 @@ namespace SafetyTourism_Group4.Data {
 
             var reports = new Report[]
             {
-            new Report{StudentID=1,CourseID=1050,Grade=Grade.A},
-            new Report{StudentID=1,CourseID=4022,Grade=Grade.C},
-            new Report{StudentID=1,CourseID=4041,Grade=Grade.B},
-            new Report{StudentID=2,CourseID=1045,Grade=Grade.B},
-            new Report{StudentID=2,CourseID=3141,Grade=Grade.F},
-            new Report{StudentID=2,CourseID=2021,Grade=Grade.F},
-            new Report{StudentID=3,CourseID=1050},
-            new Report{StudentID=4,CourseID=1050},
-            new Report{StudentID=4,CourseID=4022,Grade=Grade.F},
-            new Report{StudentID=5,CourseID=4041,Grade=Grade.C},
-            new Report{StudentID=6,CourseID=1045},
-            new Report{StudentID=7,CourseID=3141,Grade=Grade.A},
+            new Report{ReportID=1,CreationDate="20/05/2005",InfectionName="Covids",InfectedNum=1,OmsAdvice="Be careful",DestinationID=1050},
             };
-            foreach (Enrollment e in enrollments) {
-                context.Enrollments.Add(e);
+            foreach (Report r in reports) {
+                context.Reports.Add(r);
             }
             context.SaveChanges();
         }
     }
 }
+
+
