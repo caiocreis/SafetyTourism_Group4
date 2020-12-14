@@ -10,9 +10,17 @@ namespace SafetyTourism.Models
     {
         [Key]
         public long nifID { get; set; }
+
+        [Display(Name = "Name")]
         public string name { get; set; }
+
+        [Display(Name = "Address")]
         public string address { get; set; }
+
+        [Display(Name = "Email")]
         public string email { get; set; }
+
+        [Display(Name = "Phone Number")]
         public long phoneNumber { get; set; }
     }
 }
