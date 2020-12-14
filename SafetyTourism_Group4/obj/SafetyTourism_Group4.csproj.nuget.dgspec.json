@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sergi\\Desktop\\REPOS\\SafetyTourism\\SafetyTourism_Group4\\SafetyTourism_Group4\\SafetyTourism_Group4.csproj": {}
+    "C:\\Users\\jpdma\\Desktop\\4source\\SafetyTourism_Group4\\SafetyTourism_Group4\\SafetyTourism_Group4.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sergi\\Desktop\\REPOS\\SafetyTourism\\SafetyTourism_Group4\\SafetyTourism_Group4\\SafetyTourism_Group4.csproj": {
+    "C:\\Users\\jpdma\\Desktop\\4source\\SafetyTourism_Group4\\SafetyTourism_Group4\\SafetyTourism_Group4.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sergi\\Desktop\\REPOS\\SafetyTourism\\SafetyTourism_Group4\\SafetyTourism_Group4\\SafetyTourism_Group4.csproj",
+        "projectUniqueName": "C:\\Users\\jpdma\\Desktop\\4source\\SafetyTourism_Group4\\SafetyTourism_Group4\\SafetyTourism_Group4.csproj",
         "projectName": "SafetyTourism_Group4",
-        "projectPath": "C:\\Users\\sergi\\Desktop\\REPOS\\SafetyTourism\\SafetyTourism_Group4\\SafetyTourism_Group4\\SafetyTourism_Group4.csproj",
-        "packagesPath": "C:\\Users\\sergi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sergi\\Desktop\\REPOS\\SafetyTourism\\SafetyTourism_Group4\\SafetyTourism_Group4\\obj\\",
+        "projectPath": "C:\\Users\\jpdma\\Desktop\\4source\\SafetyTourism_Group4\\SafetyTourism_Group4\\SafetyTourism_Group4.csproj",
+        "packagesPath": "C:\\Users\\jpdma\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jpdma\\Desktop\\4source\\SafetyTourism_Group4\\SafetyTourism_Group4\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\sergi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jpdma\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -53,6 +53,20 @@
               "version": "[5.0.1, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[5.0.1, )"
             }
