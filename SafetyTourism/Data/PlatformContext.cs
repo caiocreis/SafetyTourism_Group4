@@ -26,6 +26,7 @@ namespace SafetyTourism.Data
             modelBuilder.Entity<Disease>().ToTable("Disease");
             modelBuilder.Entity<Report>().ToTable("Report");
             modelBuilder.Entity<Destination>().ToTable("Destination");
+            modelBuilder.Entity<Destination>().Property(c => c.countryName).HasColumnName("Country Name");
             modelBuilder.Entity<Outbreak>().ToTable("Outbreak");
             modelBuilder.Entity<RecomWHO>().ToTable("RecomendationWHO");
         }
