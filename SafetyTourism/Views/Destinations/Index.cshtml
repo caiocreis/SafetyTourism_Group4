@@ -1,0 +1,47 @@
+﻿@model IEnumerable<SafetyTourism.Models.Destination>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Destinations</h1>
+
+<p>
+    <a asp-action="Create">Add a new Travel Destination</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.countryName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cityName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.populationNum)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.countryName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cityName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.populationNum)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.destinationID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.destinationID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.destinationID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

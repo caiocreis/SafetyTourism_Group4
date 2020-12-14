@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.30804.86
+VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SafetyTourism", "SafetyTourism\SafetyTourism.csproj", "{B33E8946-E03D-48A0-B773-2D31BC872DE7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SafetyTourism", "SafetyTourism\SafetyTourism.csproj", "{2237EB0C-5E68-4E43-BF1E-C6A5906F57B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B33E8946-E03D-48A0-B773-2D31BC872DE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B33E8946-E03D-48A0-B773-2D31BC872DE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B33E8946-E03D-48A0-B773-2D31BC872DE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B33E8946-E03D-48A0-B773-2D31BC872DE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2237EB0C-5E68-4E43-BF1E-C6A5906F57B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2237EB0C-5E68-4E43-BF1E-C6A5906F57B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2237EB0C-5E68-4E43-BF1E-C6A5906F57B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2237EB0C-5E68-4E43-BF1E-C6A5906F57B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {EAA4D36D-2673-42B4-84C8-3856441AF862}
+		SolutionGuid = {52F15058-BF04-4BEE-9ED5-F448B23BA521}
 	EndGlobalSection
 EndGlobal

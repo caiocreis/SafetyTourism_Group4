@@ -1,0 +1,47 @@
+﻿@model IEnumerable<SafetyTourism.Models.Report>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Reports</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.diseaseID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.recomWhoID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.infectedPeople)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.diseaseID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.recomWhoID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.infectedPeople)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.reportID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.reportID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.reportID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
