@@ -26,7 +26,7 @@ namespace SafetyTourism.Controllers
         }
 
         // GET: Destinations/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(long? id)
         {
             if (id == null)
             {
@@ -66,7 +66,7 @@ namespace SafetyTourism.Controllers
         }
 
         // GET: Destinations/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(long? id)
         {
             if (id == null)
             {
@@ -86,7 +86,7 @@ namespace SafetyTourism.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,countryName,cityName,populationNum")] Destination destination)
+        public async Task<IActionResult> Edit(long id, [Bind("ID,countryName,cityName,populationNum")] Destination destination)
         {
             if (id != destination.ID)
             {
@@ -117,7 +117,7 @@ namespace SafetyTourism.Controllers
         }
 
         // GET: Destinations/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(long? id)
         {
             if (id == null)
             {
@@ -137,7 +137,7 @@ namespace SafetyTourism.Controllers
         // POST: Destinations/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> DeleteConfirmed(long id)
         {
             var destination = await _context.Destinations.FindAsync(id);
             _context.Destinations.Remove(destination);

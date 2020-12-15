@@ -9,9 +9,9 @@ namespace SafetyTourism.Models
     public class Outbreak
     {
         [Key]
-        public int ID { get; set; }
+        public long ID { get; set; }
 
-        public int diseaseID { get; set; }
+        public long diseaseID { get; set; }
         [Display(Name = "Date of Outbreak")]
         public DateTime startDate { get; set; }
     }

@@ -54,7 +54,7 @@ namespace SafetyTourism.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,name,address,email,phoneNumber")] Employee employee)
+        public async Task<IActionResult> Create([Bind("ID,nif,name,address,email,phoneNumber")] Employee employee)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace SafetyTourism.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(long id, [Bind("ID,name,address,email,phoneNumber")] Employee employee)
+        public async Task<IActionResult> Edit(long id, [Bind("ID,nif,name,address,email,phoneNumber")] Employee employee)
         {
             if (id != employee.ID)
             {

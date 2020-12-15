@@ -26,7 +26,7 @@ namespace SafetyTourism.Controllers
         }
 
         // GET: Outbreaks/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(long? id)
         {
             if (id == null)
             {
@@ -54,7 +54,7 @@ namespace SafetyTourism.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("outbreakID,ID,startDate")] Outbreak outbreak)
+        public async Task<IActionResult> Create([Bind("ID,diseaseID,startDate")] Outbreak outbreak)
         {
             if (ModelState.IsValid)
             {
@@ -66,7 +66,7 @@ namespace SafetyTourism.Controllers
         }
 
         // GET: Outbreaks/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(long? id)
         {
             if (id == null)
             {
@@ -86,7 +86,7 @@ namespace SafetyTourism.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("outbreakID,ID,startDate")] Outbreak outbreak)
+        public async Task<IActionResult> Edit(long id, [Bind("ID,diseaseID,startDate")] Outbreak outbreak)
         {
             if (id != outbreak.ID)
             {
@@ -117,7 +117,7 @@ namespace SafetyTourism.Controllers
         }
 
         // GET: Outbreaks/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(long? id)
         {
             if (id == null)
             {
@@ -137,7 +137,7 @@ namespace SafetyTourism.Controllers
         // POST: Outbreaks/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> DeleteConfirmed(long id)
         {
             var outbreak = await _context.Outbreaks.FindAsync(id);
             _context.Outbreaks.Remove(outbreak);

@@ -26,7 +26,7 @@ namespace SafetyTourism.Controllers
         }
 
         // GET: RecomWHOes/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(long? id)
         {
             if (id == null)
             {
@@ -66,7 +66,7 @@ namespace SafetyTourism.Controllers
         }
 
         // GET: RecomWHOes/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(long? id)
         {
             if (id == null)
             {
@@ -86,7 +86,7 @@ namespace SafetyTourism.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,description")] RecomWHO recomWHO)
+        public async Task<IActionResult> Edit(long id, [Bind("ID,description")] RecomWHO recomWHO)
         {
             if (id != recomWHO.ID)
             {
@@ -117,7 +117,7 @@ namespace SafetyTourism.Controllers
         }
 
         // GET: RecomWHOes/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(long? id)
         {
             if (id == null)
             {
@@ -137,7 +137,7 @@ namespace SafetyTourism.Controllers
         // POST: RecomWHOes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> DeleteConfirmed(long id)
         {
             var recomWHO = await _context.RecomendationsWHO.FindAsync(id);
             _context.RecomendationsWHO.Remove(recomWHO);
@@ -145,7 +145,7 @@ namespace SafetyTourism.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool RecomWHOExists(int id)
+        private bool RecomWHOExists(long id)
         {
             return _context.RecomendationsWHO.Any(e => e.ID == id);
         }
