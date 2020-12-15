@@ -34,7 +34,7 @@ namespace SafetyTourism.Controllers
             }
 
             var outbreak = await _context.Outbreaks
-                .FirstOrDefaultAsync(m => m.outbreakID == id);
+                .FirstOrDefaultAsync(m => m.ID == id);
             if (outbreak == null)
             {
                 return NotFound();
@@ -54,7 +54,7 @@ namespace SafetyTourism.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("outbreakID,diseaseID,startDate")] Outbreak outbreak)
+        public async Task<IActionResult> Create([Bind("outbreakID,ID,startDate")] Outbreak outbreak)
         {
             if (ModelState.IsValid)
             {
@@ -86,9 +86,9 @@ namespace SafetyTourism.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("outbreakID,diseaseID,startDate")] Outbreak outbreak)
+        public async Task<IActionResult> Edit(int id, [Bind("outbreakID,ID,startDate")] Outbreak outbreak)
         {
-            if (id != outbreak.outbreakID)
+            if (id != outbreak.ID)
             {
                 return NotFound();
             }
@@ -102,7 +102,7 @@ namespace SafetyTourism.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!OutbreakExists(outbreak.outbreakID))
+                    if (!OutbreakExists(outbreak.ID))
                     {
                         return NotFound();
                     }
@@ -125,7 +125,7 @@ namespace SafetyTourism.Controllers
             }
 
             var outbreak = await _context.Outbreaks
-                .FirstOrDefaultAsync(m => m.outbreakID == id);
+                .FirstOrDefaultAsync(m => m.ID == id);
             if (outbreak == null)
             {
                 return NotFound();
@@ -145,9 +145,9 @@ namespace SafetyTourism.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool OutbreakExists(int id)
+        private bool OutbreakExists(long id)
         {
-            return _context.Outbreaks.Any(e => e.outbreakID == id);
+            return _context.Outbreaks.Any(e => e.ID == id);
         }
     }
 }

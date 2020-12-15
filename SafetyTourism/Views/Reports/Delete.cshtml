@@ -12,27 +12,15 @@
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.diseaseID)
+            @Html.DisplayNameFor(model => model.Destination)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.diseaseID)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.recomWhoID)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.recomWhoID)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.infectedPeople)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.infectedPeople)
-        </dd>
+            @Html.DisplayFor(model => model.Destination.ID)
+        </dd class>
     </dl>
     
     <form asp-action="Delete">
-        <input type="hidden" asp-for="reportID" />
+        <input type="hidden" asp-for="ID" />
         <input type="submit" value="Delete" class="btn btn-danger" /> |
         <a asp-action="Index">Back to List</a>
     </form>

@@ -9,7 +9,10 @@ namespace SafetyTourism.Models
     public class Employee
     {
         [Key]
-        public long nifID { get; set; }
+        public long ID { get; set; }
+
+        [Display(Name = "Nif")]
+        public long nif { get; set; }
 
         [Display(Name = "Name")]
         public string name { get; set; }

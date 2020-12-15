@@ -10,7 +10,8 @@ namespace SafetyTourism.Models
 {
     public class Destination
     {
-        public int destinationID { get; set; }
+        [Key]
+        public long ID { get; set; }
 
         [Display(Name = "Country Name")]
         public string countryName { get; set; }
@@ -20,7 +21,7 @@ namespace SafetyTourism.Models
 
         [Display(Name = "Population Number")]
         public int populationNum { get; set; }
-        public List<Report> reportList { get; set; }
+
 
     }
 }

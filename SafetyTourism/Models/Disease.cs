@@ -8,7 +8,8 @@ namespace SafetyTourism.Models
 {
     public class Disease
     {
-        public int diseaseID { get; set; }
+        [Key]
+        public long ID { get; set; }
 
         [Display(Name = "Name")]
         public string name { get; set; }

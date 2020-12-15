@@ -34,7 +34,7 @@ namespace SafetyTourism.Controllers
             }
 
             var recomWHO = await _context.RecomendationsWHO
-                .FirstOrDefaultAsync(m => m.recomID == id);
+                .FirstOrDefaultAsync(m => m.ID == id);
             if (recomWHO == null)
             {
                 return NotFound();
@@ -54,7 +54,7 @@ namespace SafetyTourism.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("recomID,description")] RecomWHO recomWHO)
+        public async Task<IActionResult> Create([Bind("ID,description")] RecomWHO recomWHO)
         {
             if (ModelState.IsValid)
             {
@@ -86,9 +86,9 @@ namespace SafetyTourism.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("recomID,description")] RecomWHO recomWHO)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,description")] RecomWHO recomWHO)
         {
-            if (id != recomWHO.recomID)
+            if (id != recomWHO.ID)
             {
                 return NotFound();
             }
@@ -102,7 +102,7 @@ namespace SafetyTourism.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!RecomWHOExists(recomWHO.recomID))
+                    if (!RecomWHOExists(recomWHO.ID))
                     {
                         return NotFound();
                     }
@@ -125,7 +125,7 @@ namespace SafetyTourism.Controllers
             }
 
             var recomWHO = await _context.RecomendationsWHO
-                .FirstOrDefaultAsync(m => m.recomID == id);
+                .FirstOrDefaultAsync(m => m.ID == id);
             if (recomWHO == null)
             {
                 return NotFound();
@@ -147,7 +147,7 @@ namespace SafetyTourism.Controllers
 
         private bool RecomWHOExists(int id)
         {
-            return _context.RecomendationsWHO.Any(e => e.recomID == id);
+            return _context.RecomendationsWHO.Any(e => e.ID == id);
         }
     }
 }

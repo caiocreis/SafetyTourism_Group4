@@ -34,7 +34,7 @@ namespace SafetyTourism.Controllers
             }
 
             var disease = await _context.Diseases
-                .FirstOrDefaultAsync(m => m.diseaseID == id);
+                .FirstOrDefaultAsync(m => m.ID == id);
             if (disease == null)
             {
                 return NotFound();
@@ -54,7 +54,7 @@ namespace SafetyTourism.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("diseaseID,name,description")] Disease disease)
+        public async Task<IActionResult> Create([Bind("ID,name,description")] Disease disease)
         {
             if (ModelState.IsValid)
             {
@@ -86,9 +86,9 @@ namespace SafetyTourism.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("diseaseID,name,description")] Disease disease)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,name,description")] Disease disease)
         {
-            if (id != disease.diseaseID)
+            if (id != disease.ID)
             {
                 return NotFound();
             }
@@ -102,7 +102,7 @@ namespace SafetyTourism.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!DiseaseExists(disease.diseaseID))
+                    if (!DiseaseExists(disease.ID))
                     {
                         return NotFound();
                     }
@@ -125,7 +125,7 @@ namespace SafetyTourism.Controllers
             }
 
             var disease = await _context.Diseases
-                .FirstOrDefaultAsync(m => m.diseaseID == id);
+                .FirstOrDefaultAsync(m => m.ID == id);
             if (disease == null)
             {
                 return NotFound();
@@ -145,9 +145,9 @@ namespace SafetyTourism.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool DiseaseExists(int id)
+        private bool DiseaseExists(long id)
         {
-            return _context.Diseases.Any(e => e.diseaseID == id);
+            return _context.Diseases.Any(e => e.ID == id);
         }
     }
 }

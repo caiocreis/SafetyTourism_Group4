@@ -1,18 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
-using System.ComponentModel.DataAnnotations;
-
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SafetyTourism.Models
 {
     public class Report
     {
-        public int reportID { get; set; }
-        public int diseaseID { get; set; }
-        public int destinationID { get; set; }
-        public int recomWhoID { get; set; }
-        public int infectedPeople { get; set; }
+        [Key]
+        public long ID { get; set; }
+
+        [ForeignKey("Destination")]
+        public long destinationID { get; set; }
+        public Destination Destination { get; set; }
     }
 }

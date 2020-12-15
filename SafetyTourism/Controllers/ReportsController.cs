@@ -22,11 +22,12 @@ namespace SafetyTourism.Controllers
         // GET: Reports
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Reports.ToListAsync());
+            var platformContext = _context.Reports.Include(r => r.Destination);
+            return View(await platformContext.ToListAsync());
         }
 
         // GET: Reports/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(long? id)
         {
             if (id == null)
             {
@@ -34,7 +35,8 @@ namespace SafetyTourism.Controllers
             }
 
             var report = await _context.Reports
-                .FirstOrDefaultAsync(m => m.reportID == id);
+                .Include(r => r.Destination)
+                .FirstOrDefaultAsync(m => m.ID == id);
             if (report == null)
             {
                 return NotFound();
@@ -46,6 +48,7 @@ namespace SafetyTourism.Controllers
         // GET: Reports/Create
         public IActionResult Create()
         {
+            ViewData["destinationID"] = new SelectList(_context.Destinations, "ID", "ID");
             return View();
         }
 
@@ -54,7 +57,7 @@ namespace SafetyTourism.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("reportID,diseaseID,destinationID,recomWhoID,infectedPeople")] Report report)
+        public async Task<IActionResult> Create([Bind("ID,destinationID")] Report report)
         {
             if (ModelState.IsValid)
             {
@@ -62,11 +65,12 @@ namespace SafetyTourism.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["destinationID"] = new SelectList(_context.Destinations, "ID", "ID", report.destinationID);
             return View(report);
         }
 
         // GET: Reports/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(long? id)
         {
             if (id == null)
             {
@@ -78,6 +82,7 @@ namespace SafetyTourism.Controllers
             {
                 return NotFound();
             }
+            ViewData["destinationID"] = new SelectList(_context.Destinations, "ID", "ID", report.destinationID);
             return View(report);
         }
 
@@ -86,9 +91,9 @@ namespace SafetyTourism.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("reportID,diseaseID,destinationID,recomWhoID,infectedPeople")] Report report)
+        public async Task<IActionResult> Edit(long id, [Bind("ID,destinationID")] Report report)
         {
-            if (id != report.reportID)
+            if (id != report.ID)
             {
                 return NotFound();
             }
@@ -102,7 +107,7 @@ namespace SafetyTourism.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ReportExists(report.reportID))
+                    if (!ReportExists(report.ID))
                     {
                         return NotFound();
                     }
@@ -113,11 +118,12 @@ namespace SafetyTourism.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["destinationID"] = new SelectList(_context.Destinations, "ID", "ID", report.destinationID);
             return View(report);
         }
 
         // GET: Reports/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(long? id)
         {
             if (id == null)
             {
@@ -125,7 +131,8 @@ namespace SafetyTourism.Controllers
             }
 
             var report = await _context.Reports
-                .FirstOrDefaultAsync(m => m.reportID == id);
+                .Include(r => r.Destination)
+                .FirstOrDefaultAsync(m => m.ID == id);
             if (report == null)
             {
                 return NotFound();
@@ -137,7 +144,7 @@ namespace SafetyTourism.Controllers
         // POST: Reports/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> DeleteConfirmed(long id)
         {
             var report = await _context.Reports.FindAsync(id);
             _context.Reports.Remove(report);
@@ -145,9 +152,9 @@ namespace SafetyTourism.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ReportExists(int id)
+        private bool ReportExists(long id)
         {
-            return _context.Reports.Any(e => e.reportID == id);
+            return _context.Reports.Any(e => e.ID == id);
         }
     }
 }

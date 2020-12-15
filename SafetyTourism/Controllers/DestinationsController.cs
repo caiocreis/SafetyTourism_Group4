@@ -34,7 +34,7 @@ namespace SafetyTourism.Controllers
             }
 
             var destination = await _context.Destinations
-                .FirstOrDefaultAsync(m => m.destinationID == id);
+                .FirstOrDefaultAsync(m => m.ID == id);
             if (destination == null)
             {
                 return NotFound();
@@ -54,7 +54,7 @@ namespace SafetyTourism.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("destinationID,countryName,cityName,populationNum")] Destination destination)
+        public async Task<IActionResult> Create([Bind("ID,countryName,cityName,populationNum")] Destination destination)
         {
             if (ModelState.IsValid)
             {
@@ -86,9 +86,9 @@ namespace SafetyTourism.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("destinationID,countryName,cityName,populationNum")] Destination destination)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,countryName,cityName,populationNum")] Destination destination)
         {
-            if (id != destination.destinationID)
+            if (id != destination.ID)
             {
                 return NotFound();
             }
@@ -102,7 +102,7 @@ namespace SafetyTourism.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!DestinationExists(destination.destinationID))
+                    if (!DestinationExists(destination.ID))
                     {
                         return NotFound();
                     }
@@ -125,7 +125,7 @@ namespace SafetyTourism.Controllers
             }
 
             var destination = await _context.Destinations
-                .FirstOrDefaultAsync(m => m.destinationID == id);
+                .FirstOrDefaultAsync(m => m.ID == id);
             if (destination == null)
             {
                 return NotFound();
@@ -145,9 +145,9 @@ namespace SafetyTourism.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool DestinationExists(int id)
+        private bool DestinationExists(long id)
         {
-            return _context.Destinations.Any(e => e.destinationID == id);
+            return _context.Destinations.Any(e => e.ID == id);
         }
     }
 }

@@ -34,7 +34,7 @@ namespace SafetyTourism.Controllers
             }
 
             var employee = await _context.Employees
-                .FirstOrDefaultAsync(m => m.nifID == id);
+                .FirstOrDefaultAsync(m => m.ID == id);
             if (employee == null)
             {
                 return NotFound();
@@ -54,7 +54,7 @@ namespace SafetyTourism.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("nifID,name,address,email,phoneNumber")] Employee employee)
+        public async Task<IActionResult> Create([Bind("ID,name,address,email,phoneNumber")] Employee employee)
         {
             if (ModelState.IsValid)
             {
@@ -86,9 +86,9 @@ namespace SafetyTourism.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(long id, [Bind("nifID,name,address,email,phoneNumber")] Employee employee)
+        public async Task<IActionResult> Edit(long id, [Bind("ID,name,address,email,phoneNumber")] Employee employee)
         {
-            if (id != employee.nifID)
+            if (id != employee.ID)
             {
                 return NotFound();
             }
@@ -102,7 +102,7 @@ namespace SafetyTourism.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!EmployeeExists(employee.nifID))
+                    if (!EmployeeExists(employee.ID))
                     {
                         return NotFound();
                     }
@@ -125,7 +125,7 @@ namespace SafetyTourism.Controllers
             }
 
             var employee = await _context.Employees
-                .FirstOrDefaultAsync(m => m.nifID == id);
+                .FirstOrDefaultAsync(m => m.ID == id);
             if (employee == null)
             {
                 return NotFound();
@@ -147,7 +147,7 @@ namespace SafetyTourism.Controllers
 
         private bool EmployeeExists(long id)
         {
-            return _context.Employees.Any(e => e.nifID == id);
+            return _context.Employees.Any(e => e.ID == id);
         }
     }
 }

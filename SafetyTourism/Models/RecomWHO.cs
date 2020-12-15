@@ -9,7 +9,8 @@ namespace SafetyTourism.Models
     public class RecomWHO
     {
         [Key]
-        public int recomID { get; set; }
+        public int ID { get; set; }
+
         public string description { get; set; }
     }
 }

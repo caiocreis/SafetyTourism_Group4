@@ -15,20 +15,19 @@ namespace SafetyTourism.Data
 
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Disease> Diseases { get; set; }
-        public DbSet<Report> Reports { get; set; }
         public DbSet<Destination> Destinations { get; set; }
         public DbSet<Outbreak> Outbreaks { get; set; }
         public DbSet<RecomWHO> RecomendationsWHO{ get; set; }
+        public DbSet<Report> Reports { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Employee>().ToTable("Employee");
             modelBuilder.Entity<Disease>().ToTable("Disease");
-            modelBuilder.Entity<Report>().ToTable("Report");
             modelBuilder.Entity<Destination>().ToTable("Destination");
-            modelBuilder.Entity<Destination>().Property(c => c.countryName).HasColumnName("Country Name");
             modelBuilder.Entity<Outbreak>().ToTable("Outbreak");
             modelBuilder.Entity<RecomWHO>().ToTable("RecomendationWHO");
+            modelBuilder.Entity<Report>().ToTable("Report");
         }
     }
 }
